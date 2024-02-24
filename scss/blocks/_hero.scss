@@ -1,0 +1,263 @@
+@use "../mixins" as c;
+@use "../variables" as v;
+
+.hero {
+    position: relative;
+    padding-top: 357px;
+    padding-bottom: 168px;
+    background-image: url(../images/herobg.svg);
+    background-repeat: no-repeat;
+    background-size: 429px 286px;
+    background-position: calc(50% + 78px) calc(50% - 285px);
+}
+
+.hero__box {
+    @include c.flexbox;
+}
+
+.hero__title {
+    color: v.$main-title-color;
+    text-align: center;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px; /* 114.286% */
+    letter-spacing: -1.05px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.hero__text {
+    color: v.$main-text-color;
+    text-align: center;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px; /* 166.667% */
+    letter-spacing: 0.123px;
+    margin-top: 0;
+    margin-bottom: 32px;
+}
+
+.hero__link {
+    display: inline-block;
+    color: #fff;
+    border-radius: 28px;
+    background-color: v.$main-link-bg;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration-line: none;
+    padding: 12px 38px 10px;
+    @include c.transitionbg;
+}
+
+.hero__link:hover {
+    background-color: #9ae3e3;
+}
+
+.hero__form {
+    @include c.flexbox($justify: null);
+    border-radius: 10px;
+    padding: 24px;
+    background-color: #3a3054;
+    background-image: url(../images/formbg.svg);
+    background-repeat: no-repeat;
+    background-position: calc(50% + 266px) calc(50% + 32px);
+    position: absolute;
+    bottom: -88px;
+}
+
+.hero__input {
+    border-radius: 5px;
+    background-color: #fff;
+    color: #34313d;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 36px; /* 225% */
+    letter-spacing: 0.12px;
+    border: none;
+    margin-bottom: 16px;
+    padding-top: 6px;
+    padding-right: 0;
+    padding-bottom: 6px;
+    padding-left: 12px;
+}
+
+.hero__btn {
+    color: #fff;
+    background-color: v.$main-link-bg;
+    border-radius: 5px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding: 11px 64px 10px;
+    border: none;
+    @include c.transitionbg;
+}
+
+.hero__btn:hover {
+    background-color: #9ae3e3;
+}
+
+@media only screen and (min-width: 370px) {
+    .hero {
+        background-size: auto;
+        background-position: calc(50% + 86px) calc(50% - 238px);
+    }
+
+    .hero__title {
+        font-size: 42px;
+    }
+
+    .hero__text {
+        font-size: 18px;
+    }
+
+    .hero__link {
+        font-size: 20px;
+        padding: 14px 40px 12px;
+    }
+
+    .hero__input {
+        width: 279px;
+    }
+
+    .hero__btn {
+        width: 279px;
+    }
+}
+
+@media only screen and (min-width: 540px) {
+    .hero__title {
+        font-size: 46px;
+    }
+
+    .hero__text {
+        font-size: 21px;
+    }
+
+    .hero__input {
+        width: 390px;
+    }
+
+    .hero__btn {
+        width: 390px;
+    }
+}
+
+@media only screen and (min-width: 553px) {
+    .hero {
+        background-position: calc(50% + 40px) calc(50% - 204px);
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .hero {
+        padding-bottom: 181px;
+        background-position: calc(50% + 40px) calc(50% - 276px);
+    }
+
+    .hero__box {
+        max-width: 564px;
+        align-items: flex-start;
+    }
+
+    .hero__title {
+        color: #34313d;
+        text-align: left;
+        font-size: 60px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 90px; /* 112.5% */
+        letter-spacing: -2px;
+        margin-bottom: 5px;
+    }
+
+    .hero__text {
+        color: #9e9aa8;
+        text-align: left;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 36px; /* 163.636% */
+        letter-spacing: 0.15px;
+        margin-bottom: 38px;
+    }
+
+    .hero__form {
+        flex-direction: row;
+        column-gap: 24px;
+        bottom: -77px;
+        left: calc(50% - 330px);
+    }
+
+    .hero__input {
+        width: 400px;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        margin-bottom: 0;
+    }
+
+    .hero__btn {
+        width: 188px;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        padding: 18px 40px 16px 40px;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .hero {
+        padding-top: 91px;
+        background-image: url(../images/hero-bgdestop.svg);
+        background-position: calc(50% + 382px) calc(50% - 96px);
+    }
+
+    .hero__form {
+        left: calc(50% - 450px);
+    }
+
+    .hero__input {
+        width: 640px;
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    .hero {
+        background-position: calc(50% + 373px) calc(50% - 30px);
+    }
+
+    .hero__form {
+        padding: 38px 45px;
+        bottom: -83px;
+        left: calc(50% - 526px);
+    }
+
+    .hero__input {
+        width: 750px;
+    }
+}
+
+@media only screen and (min-width: 1150px) {
+    .hero {
+        background-position: calc(50% + 430px) calc(50% - 45px);
+    }
+
+    .hero__form {
+        width: 1110px;
+        bottom: -88px;
+        left: calc(50% - 555px);
+        padding: 52px 64px;
+    }
+
+    .hero__input {
+        width: 769px;
+        padding-left: 32px;
+    }
+}

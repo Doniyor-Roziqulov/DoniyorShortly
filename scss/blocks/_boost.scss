@@ -1,0 +1,76 @@
+@use "../mixins" as c;
+@use "../variables" as v;
+
+.boost {
+    padding-top: 90px;
+    padding-bottom: 90px;
+    background-color: #3a3054;
+    background-image: url(../../images/boostbg.svg);
+    background-repeat: no-repeat;
+    background-position: calc(50% + 10px) calc(50% + 10px);
+}
+
+.boost__box {
+    @include c.flexbox($justify: null);
+}
+
+.boost__title {
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px; /* 171.429% */
+    letter-spacing: -0.7px;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.boost__link {
+    display: inline-block;
+    color: #fff;
+    background-color: v.$main-link-bg;
+    border-radius: 28px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration-line: none;
+    padding: 14px 40px 12px;
+    @include c.transitionbg;
+}
+
+.boost__link:hover {
+    background-color: #9ae3e3;
+}
+
+@media only screen and (min-width: 370px) {
+    .boost__title {
+        font-size: 28px;
+    }
+
+    .boost__link {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .boost {
+        padding-top: 57px;
+        padding-bottom: 57px;
+    }
+
+    .boost__title {
+        font-size: 40px;
+    }
+
+    .boost__link {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    .boost {
+        background-position: calc(50% - 476px) calc(50% + 32px);
+    }
+}

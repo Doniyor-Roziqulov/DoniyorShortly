@@ -1,0 +1,233 @@
+@use "../mixins" as c;
+@use "../variables" as v;
+
+.statistics {
+    padding-top: 160px;
+    padding-bottom: 80px;
+    background-color: #eff1f7;
+}
+
+.statistics__title {
+    color: v.$main-title-color;
+    text-align: center;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px; /* 171.429% */
+    letter-spacing: -0.7px;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.statistics__text {
+    color: v.$main-text-color;
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px; /* 175% */
+    letter-spacing: 0.109px;
+    margin-top: 0;
+    margin-bottom: 92px;
+}
+
+.statistics__list {
+    @include c.flexbox($justify: null);
+    row-gap: 92px;
+    @include c.lists;
+    list-style: none;
+    position: relative;
+}
+
+.statistics__list::before {
+    content: "";
+    width: 8px;
+    height: 800px;
+    background-image: url(../../images/line.svg);
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+.statistics__item {
+    max-width: 327px;
+    background-color: #fff;
+    padding: 77px 32px 41px;
+    border-radius: 5px;
+    position: relative;
+    z-index: 2;
+}
+
+.statistics__item::before {
+    content: "";
+    width: 88px;
+    height: 88px;
+    background-image: url(../images/statistcs.svg);
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -44px;
+    left: calc(50% - 44px);
+}
+
+.statistics__item--two::before {
+    background-image: url(../images/detailed.svg);
+}
+
+.statistics__item--three::before {
+    background-image: url(../images/pincle.svg);
+}
+
+.statistics__small-title {
+    color: v.$main-title-color;
+    text-align: center;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.statistics__small-text {
+    color: v.$main-text-color;
+    text-align: center;
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px; /* 173.333% */
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+@media only screen and (min-width: 340px) {
+    .statistics__title {
+        font-size: 28px;
+    }
+
+    .statistics__text {
+        font-size: 16px;
+    }
+
+    .statistics__small-title {
+        font-size: 22px;
+    }
+
+    .statistics__small-text {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .statistics__box {
+        width: 540px;
+    }
+
+    .statistics__item {
+        max-width: 400px;
+    }
+
+    .statistics__title {
+        font-size: 40px;
+    }
+
+    .statistics__text {
+        font-size: 18px;
+    }
+
+    .statistics__big-box {
+        @include c.flexbox($justify:null);
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .statistics {
+        padding-bottom: 208px;
+    }
+
+    .statistics__list::before {
+        width: 800px;
+        height: 8px;
+        background-image: url(../images/linex.svg);
+        top: 152px;
+    }
+
+    .statistics__list {
+        flex-direction: row;
+        column-gap: 30px;
+    }
+
+    .statistics__item {
+        max-width: 300px;
+    }
+
+    .statistics__item--two {
+        top: 44px;
+    }
+
+    .statistics__item--three {
+        top: 88px;
+    }
+
+    .statistics__small-title {
+        font-size: 19px;
+        text-align: left;
+    }
+
+    .statistics__small-text {
+        font-size: 11px;
+        text-align: left;
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    .statistics {
+        padding-top: 204px;
+        padding-bottom: 208px;
+    }
+
+    .statistics__list {
+        flex-direction: row;
+        column-gap: 30px;
+    }
+
+    .statistics__list::before {
+        width: 1000px;
+        height: 8px;
+        background-image: url(../images/linex.svg);
+        top: 152px;
+    }
+
+    .statistics__item {
+        max-width: 350px;
+    }
+
+    .statistics__item--two {
+        top: 44px;
+    }
+
+    .statistics__item--three {
+        top: 88px;
+    }
+
+    .statistics__title {
+        margin-bottom: 18px;
+    }
+
+    .statistics__text {
+        margin-bottom: 100px;
+    }
+
+    .statistics__item::before {
+        left: 32px;
+    }
+
+    .statistics__small-title {
+        text-align: left;
+    }
+
+    .statistics__small-text {
+        text-align: left;
+        font-size: 14px;
+    }
+}

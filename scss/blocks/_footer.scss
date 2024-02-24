@@ -1,0 +1,134 @@
+@use "../mixins" as c;
+
+.site-footer {
+    background-color: #232127;
+    padding-top: 54px;
+    padding-bottom: 56px;
+}
+
+.site-footer__box {
+    @include c.flexbox($justify: null);
+}
+
+.site-footer__list {
+    @include c.flexbox($justify: null, $items: null);
+    row-gap: 38px;
+    margin-top: 50px;
+    margin-bottom: 46px;
+    padding-left: 0;
+    list-style: none;
+}
+
+.site-footer__item {
+    @include c.flexbox($justify: null);
+}
+
+.site-footer__bold {
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.25px;
+}
+
+.innerlist {
+    @include c.flexbox($justify: null);
+    row-gap: 10px;
+    margin-top: 22px;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.innerlist__link {
+    color: #bfbfbf;
+    text-align: center;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.234px;
+    text-decoration-line: none;
+    //* transition: color 0.4s linear; *//
+    @include c.transitions;
+}
+
+.innerlist__link:hover {
+    color: #2bd0d0;
+}
+
+.iconlist {
+    @include c.flexbox($direction: null, $justify: null);
+    column-gap: 24px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.iconlist__link {
+    color: #fff;
+    transition: color 0.4s linear;
+}
+
+.iconlist__link:hover {
+    color: #2bd0d0;
+}
+
+@media only screen and (min-width: 750px) {
+    .site-footer {
+        padding-top: 71px;
+        padding-bottom: 70px;
+    }
+
+    .site-footer__box {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .site-footer__list {
+        flex-direction: row;
+        column-gap: 40px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .site-footer__item {
+        align-items: flex-start;
+    }
+
+    .innerlist {
+        align-items: flex-start;
+    }
+
+    .iconlist {
+        column-gap: 15px;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .site-footer__list {
+        column-gap: 70px;
+    }
+}
+
+@media only screen and (min-width: 1050px) {
+    .site-footer__list {
+        column-gap: 101px;
+        margin-left: 100px;
+    }
+
+    .iconlist {
+        column-gap: 24px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .site-footer__list {
+        margin-left: 160px;
+    }
+}
