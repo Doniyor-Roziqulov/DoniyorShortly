@@ -21,7 +21,8 @@
 }
 
 .site-header__box {
-    @include c.flexbox($direction:null);
+    position: relative;
+    @include c.flexbox($direction: null);
 }
 
 .site-header__btn {
@@ -43,7 +44,7 @@
 }
 
 .navbar__list {
-    @include c.flexbox($justify:null);
+    @include c.flexbox($justify: null);
     row-gap: 30px;
     @include c.lists;
     list-style: none;
@@ -61,17 +62,18 @@
 }
 
 .inner-box {
+    width: 100%;
     display: none;
     position: absolute;
     top: 96px;
-    left: 0;
-    width: 100vw;
+    left: 0px;
+    // width: 100vw;
     // height: 100vh;
     z-index: 4;
 }
 
 .site-header__inner {
-    @include c.flexbox($justify:null);
+    @include c.flexbox($justify: null);
 }
 
 .site-header__login {
@@ -91,12 +93,12 @@
     color: #fff;
     border-radius: 28px;
     background-color: v.$main-link-bg;
-    font-size: 18px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
     text-decoration-line: none;
-    padding: 12px 70px 9px 70px;
+    padding: 12px 60px 9px 60px;
 }
 
 @media only screen and (min-width: 700px) {
@@ -105,13 +107,12 @@
         padding-bottom: 48px;
     }
 
-
     .site-header__btn {
         display: none;
     }
 
     .site-header__nav-box {
-        @include c.flexbox($direction:null);
+        @include c.flexbox($direction: null);
         position: relative;
         top: 0;
         background-color: transparent;
@@ -121,7 +122,7 @@
     }
 
     .navbar__list {
-        @include c.flexbox($direction:row, $justify:null);
+        @include c.flexbox($direction: row, $justify: null);
         @include c.lists;
         padding-bottom: 0;
         list-style: none;
@@ -155,7 +156,7 @@
     }
 
     .site-header__inner {
-        @include c.flexbox($direction:row, $justify:null);
+        @include c.flexbox($direction: row, $justify: null);
     }
 
     .site-header__login {
